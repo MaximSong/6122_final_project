@@ -203,14 +203,14 @@ void build_http_header(char *http_header, char *hostname, char *path, int port, 
         std::cout << host_hdr << " " << host_hdr_format << " " << hostname << std::endl;
     }
 
-    std::cout << http_header << " " << "%s%s%s%s%s%s%s"
-            << " " << request_hdr
-            << " " << host_hdr
-            << " " << conn_hdr
-            << " " << prox_hdr
-            << " " << user_agent_hdr
-            << " " << other_hdr
-            << " " << endof_hdr << std::endl;
+    sprintf(http_header, "%s%s%s%s%s%s%s",
+            request_hdr,
+            host_hdr,
+            conn_hdr,
+            prox_hdr,
+            user_agent_hdr,
+            other_hdr,
+            endof_hdr);
     return ;
 }
 
@@ -243,7 +243,7 @@ void parse_uri(char *uri, char *hostname, char *path, int *port)
     else
     {
         pos2 = strstr(pos, "/");
-        if(pos2 != NULL)
+        if (pos2 != NULL)
         {
             *pos2 = '\0';
             sscanf(pos, "%s", hostname);
