@@ -71,8 +71,8 @@ inline int connect_endServer(char *hostname, int port, char *http_header)
 /* parse the uri to get hostname, file path, port */
 void parse_uri(char *uri, char *hostname, char *path, int *port)
 {
-    *port = 80;//default port
-    char* pos = strstr(uri, "//");//find the first position of "//"
+    *port = 80; // default port
+    char* pos = strstr(uri, "//"); // find the first position of "//"
     
     pos = pos != NULL ? pos + 2 : uri;
 
@@ -105,17 +105,17 @@ void parse_uri(char *uri, char *hostname, char *path, int *port)
 /* handle client transactions */
 void doit(int connfd)
 {
-    int end_serverfd; //end server socket
+    int end_serverfd; // end server socket
     char buf[MAXLINE], method[MAXLINE], uri[MAXLINE], version[MAXLINE];
-    char endserver_http_header[MAXLINE]; //store the http_header
+    char endserver_http_header[MAXLINE]; // store the http_header
     /* store the request line arguments */
     char hostname[MAXLINE], path[MAXLINE];
     int port;
 
-    /*rio is client's rio,server_rio is endserver's rio*/
+    /* rio is client's rio, server_rio is endserver's rio */
     rio_t rio, server_rio;
-    Rio_readinitb(&rio, connfd);//Initiate the buf
-    Rio_readlineb(&rio, buf, MAXLINE);// Read data from the buf
+    Rio_readinitb(&rio, connfd); // Initiate the buf
+    Rio_readlineb(&rio, buf, MAXLINE); //  Read data from the buf
 
     istringstream iss(buf);
     iss >> method >> uri >> version;

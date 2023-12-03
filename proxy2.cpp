@@ -60,7 +60,7 @@ void build_http_header(char *http_header, char *hostname, char *path, int port, 
     return ;
 }
 
-/*Connect to the end server*/
+/* Connect to the end server */
 inline int connect_endServer(char *hostname, int port, char *http_header)
 {
     char portStr[100];
@@ -114,7 +114,7 @@ void doit(int connfd)
     /* rio is client's rio, server_rio is endserver's rio */
     rio_t rio, server_rio;
     Rio_readinitb(&rio, connfd); // Initiate the buf
-    Rio_readlineb(&rio, buf, MAXLINE);// Read data from the buf
+    Rio_readlineb(&rio, buf, MAXLINE); // Read data from the buf
 
     istringstream iss(buf);
     iss >> method >> uri >> version;
