@@ -1,6 +1,5 @@
-
 # Set the concurrency level
-CONCURRENCY=23
+CONCURRENCY=5
 
 # Create a temporary directory for tracking successes
 temp_dir=$(mktemp -d)
@@ -12,9 +11,6 @@ function send_request {
 
     # Send a GET request and capture the full response including headers
     full_response=$(curl -s -i -X GET -x http://localhost:30308 \
-             -H "Host: baidu.com" \
-             -H "Connection: close" \
-             -H "Proxy-Connection: close" \
              http://baidu.com/)
 
     # Extract the HTTP status code

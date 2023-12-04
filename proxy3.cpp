@@ -177,7 +177,7 @@ void build_http_header(char *http_header, char *hostname, char *path, int port, 
 {
     char buf[MAXLINE], request_hdr[MAXLINE], other_hdr[MAXLINE], host_hdr[MAXLINE];
     // request line
-    std::cout << request_hdr << " " << requestlint_hdr_format << " " << path << std::endl;
+    sprintf(request_hdr, requestlint_hdr_format, path);
     // get other request header for client rio and change it
     while (Rio_readlineb(client_rio, buf, MAXLINE) > 0)
     {
@@ -200,7 +200,7 @@ void build_http_header(char *http_header, char *hostname, char *path, int port, 
 
     if (strlen(host_hdr) == 0)
     {
-        std::cout << host_hdr << " " << host_hdr_format << " " << hostname << std::endl;
+        sprintf(host_hdr, host_hdr_format, hostname);
     }
 
     sprintf(http_header, "%s%s%s%s%s%s%s",
@@ -218,7 +218,7 @@ void build_http_header(char *http_header, char *hostname, char *path, int port, 
 inline int connect_endServer(char *hostname, int port, char *http_header)
 {
     char portStr[100];
-    std::cout << portStr << " " << port << std::endl;
+    sprintf(portStr, "%d", port); // int to string
     return Open_clientfd(hostname, portStr);
 }
 
