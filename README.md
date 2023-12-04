@@ -11,8 +11,8 @@ Jiuao Song, Zixuan Wang
 ### Operating System
 - Linux
 ### Required Tools
-- curl(Version 7.2 or higher)
-- telnet(optional)
+- curl (Version 7.2 or higher)
+- telnet (optional, not available on pace-ice!)
 
 ## Compilation
 
@@ -89,11 +89,11 @@ This will create `test3` in current working directory.
 
 Now, open a new terminal and run
 ```
-linux> ./test 30308
+linux> ./test3 30308
 ```
 
 Next, you can run the ``ProxyCacheTest.sh`` to test the cache function.
 ```
-linux> ./ProxyConcurrentTest.sh
+linux> ./ProxyCacheTest.sh
 ```
 This script runs multiple identical requests and measures their response times. A noticeable reduction in response time is expected, demonstrating the effectiveness of the cache.
