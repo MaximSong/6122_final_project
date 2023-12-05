@@ -102,3 +102,6 @@ linux> ./ProxyCacheTest.sh
 This script runs multiple identical requests and measures their response times. A noticeable reduction in response time is expected, demonstrating the effectiveness of the cache.
 
 All the test depends on the network situation and the server, it may not work sometimes. Try to run it in few minutes later could solve the problem. 
+
+### Reference
+[cmu csapp proxylab](http://csapp.cs.cmu.edu/3e/proxylab.pdf)
