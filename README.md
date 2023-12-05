@@ -1,9 +1,12 @@
 # Thread-safe Caching Web Proxy
 
-## Team members
+## Team Members
 Jiuao Song, Zixuan Wang
 
-## Related course material
+## Video Link for Showing Our Project Running
+Check this [Google Drive Link](https://drive.google.com/drive/folders/1m5drFtUTbieINoFHoO3eC5wZ2pjtJXzs?usp=sharing) to watch videos of our project!
+
+## Related Course Material
 - Multi-threading: in Part II, we use multi-threading to deal with concurrent requests.
 - Socket Programming
 
